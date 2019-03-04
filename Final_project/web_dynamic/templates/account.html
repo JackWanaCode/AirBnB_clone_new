@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<a class="update_profile" href="{{ url_for('update_profile') }}">Update Profile</a>
+<div hidden method="POST" class="current_user" id="user_id">{{ user_id }}</div>
+<div hidden method="POST" class="current_user_name" id="user_name">{{ user_name }}</div>
+<div class="container">
+<section class="places">
+  <h1>Places</h1>
+
+<!-- **********************
+     BEGIN 1 PLACE
+     ********************** -->
+
+</section>
+</div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Please choose the location</h3>
+<form method="POST">
+  <input type="text" name="text" id='city_box'>
+  <input type="submit">
+</form>
+<script>
+  let input = document.getElementById('city_box');
+  let autocomplete = new google.maps.places.Autocomplete(input);
+</script>
+{% endblock content %}

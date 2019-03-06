@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+
+      <div class="container">
+
+	<!-- **********************
+	     FILTERS
+	     ********************** -->
+
+	<section class="filters">
+
+	  <!-- **********************
+	       LOCATIONS
+	       ********************** -->
+
+	  <div class="locations">
+	    <h3>States</h3>
+	    <h4>&nbsp;</h4>
+	    <ul class="popover">
+	      {% for state in states|dictsort %}
+	      <H2><input type="checkbox" data-id="{{ state[1].id }}" data-name="{{ state[0] }}">{{ state[0] }}</H2>
+	      <UL>
+		{% for city in state[1].cities|sort(attribute='name') %}
+		<LI><input type="checkbox" data-id="{{ city.id }}" data-name="{{ city.name }}">{{ city.name }}</LI>
+		{% endfor %}
+	      </UL>
+	      {% endfor %}
+	    </ul>
+	  </div>
+
+	  <!-- **********************
+	       AMENITIES
+	       ********************** -->
+
+	  <div class="amenities">
+	    <h3>Amenities</h3>
+	    <h4>&nbsp;</h4>
+	    <ul class="popover">
+	      {% for amenity in amens|sort(attribute='name') %}
+	      <LI><input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}</LI>
+	      {% endfor %}
+	    </ul>
+	  </div>
+
+	  <!-- **********************
+	       SEARCH BUTTON
+	       ********************** -->
+
+	  <button class='Search'>Search</button>
+	</section>
+
+	<section class="places">
+	  <h1>Places</h1>
+
+	<!-- **********************
+	     BEGIN 1 PLACE
+	     ********************** -->
+
+	</section>
+      </div>
+{% endblock content %}

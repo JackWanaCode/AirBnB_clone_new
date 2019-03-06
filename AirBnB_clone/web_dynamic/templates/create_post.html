@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">{{ legend }}</legend>
+            <div class="form-group" id="name">
+                {{ form.name.label(class="form-control-label") }}
+                {% if form.name.errors %}
+                    {{ form.name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group" id="description">
+                {{ form.description.label(class="form-control-label") }}
+                {% if form.description.errors %}
+                    {{ form.description(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.description.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.description(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group" id="number_rooms">
+                {{ form.number_rooms.label(class="form-control-label") }}
+                {% if form.number_rooms.errors %}
+                    {{ form.number_rooms(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.number_rooms.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.number_rooms(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group" id="number_bathrooms">
+                {{ form.number_bathrooms.label(class="form-control-label") }}
+                {% if form.number_bathrooms.errors %}
+                    {{ form.number_bathrooms(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.number_bathrooms.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.number_bathrooms(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group" id="max_guest">
+                {{ form.max_guest.label(class="form-control-label") }}
+                {% if form.max_guest.errors %}
+                    {{ form.max_guest(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.max_guest.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.max_guest(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group" id="price_by_night">
+                {{ form.price_by_night.label(class="form-control-label") }}
+                {% if form.price_by_night.errors %}
+                    {{ form.price_by_night(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.price_by_night.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.price_by_night(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group" id="price_by_night">
+                {{ form.amenities.label(class="form-control-label") }}
+                {% if form.amenities.errors %}
+                    {{ form.amenities(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.amenities.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.amenities(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}
